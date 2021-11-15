@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class EnemyPathfinder : MonoBehaviour
 {
-    [SerializeField] WaveConfigSO waveConfig;
+    private WaveConfigSO waveConfig;
     private List<Transform> path;
     int currentWaypointTargetIndex;
+
+    public void SetWaveConfig(WaveConfigSO config)
+    {
+        waveConfig = config;
+    }
 
     // Start is called before the first frame update
     void Start()

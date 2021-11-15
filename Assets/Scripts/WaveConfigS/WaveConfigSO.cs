@@ -2,10 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPathSO : ScriptableObject
+[CreateAssetMenu(menuName = "Wave Config", fileName = "New Wave Config")]
+public class WaveConfigSO : ScriptableObject
 {
+    [SerializeField] List<GameObject> enemyPrefabs;
     [SerializeField] Transform pathPrefab;
     [SerializeField] float enemyMoveSpeed = 5f;
+
+    public List<GameObject> GetEnemyObjects()
+    {
+        return enemyPrefabs;
+    }
 
     public Transform GetFirstWaypoint()
     {
