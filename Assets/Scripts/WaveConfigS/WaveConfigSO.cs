@@ -5,13 +5,34 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Wave Config", fileName = "New Wave Config")]
 public class WaveConfigSO : ScriptableObject
 {
+    [Header("Enemy Setup")]
     [SerializeField] List<GameObject> enemyPrefabs;
-    [SerializeField] Transform pathPrefab;
     [SerializeField] float enemyMoveSpeed = 5f;
+
+    [Header("Spawning Options")]
+    [SerializeField] float timeBetweenSpawns = 1f;
+    [SerializeField] float spawnTimeVariance = 0.5f;
+    [SerializeField] float minTimeBetweenSpawns = 0.2f;
+
+    [Header("Path Setup")]
+    [SerializeField] Transform pathPrefab;
+
+    
 
     public List<GameObject> GetEnemyObjects()
     {
         return enemyPrefabs;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return enemyMoveSpeed;
+    }
+
+    public float GetRandomSpawnInterval()
+    {
+        float spawnInterval = Random.Range(timeBetweenSpawns - spawnTimeVariance, timeBetweenSpawns + spawnTimeVariance);
+        return Mathf.Clamp(spawnInterval, minTimeBetweenSpawns, float.MaxValue);
     }
 
     public Transform GetFirstWaypoint()
@@ -28,10 +49,5 @@ public class WaveConfigSO : ScriptableObject
         }
 
         return waypoints;
-    }
-
-    public float GetMoveSpeed()
-    {
-        return enemyMoveSpeed;
     }
 }
