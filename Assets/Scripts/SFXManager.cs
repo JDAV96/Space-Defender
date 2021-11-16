@@ -25,41 +25,38 @@ public class SFXManager : MonoBehaviour
 
     [Header("Damage Clips")]
     [SerializeField] private AudioClip enemyExplosion;
-    [SerializeField] [Range(0f, 1f)] float enemyExplosionpVol;
+    [SerializeField] [Range(0f, 1f)] float enemyExplosionVol;
     [SerializeField] private AudioClip playerExplosion;
-    [SerializeField] [Range(0f, 1f)] float playerExplosionpVol;
+    [SerializeField] [Range(0f, 1f)] float playerExplosionVol;
     [SerializeField] private AudioClip playerTookDamageClip;
     [SerializeField] [Range(0f, 1f)] float playerTookDamageVol;
 
     public void PlayBasicLaserShotClip()
     {
-        if (basicLaserShotClip != null)
-        {  
-            AudioSource.PlayClipAtPoint(basicLaserShotClip, Camera.main.transform.position, basicLaserShotClipVol);
-        }
+        PlayAudioClip(basicLaserShotClip, basicLaserShotClipVol);
     }
 
     public void PlayEnemyExplosionClip()
     {
-        if (enemyExplosion != null)
-        {  
-            AudioSource.PlayClipAtPoint(enemyExplosion, Camera.main.transform.position, enemyExplosionpVol);
-        }
+        PlayAudioClip(enemyExplosion, enemyExplosionVol);
     }
 
     public void PlayPlayerExplosionClip()
     {
-        if (playerExplosion != null)
-        {  
-            AudioSource.PlayClipAtPoint(playerExplosion, Camera.main.transform.position, playerExplosionpVol);
-        }
+        
+        PlayAudioClip(playerExplosion, playerExplosionVol);
     }
 
     public void PlayplayerTookDamageClip()
     {
-        if (playerTookDamageClip != null)
-        {  
-            AudioSource.PlayClipAtPoint(playerTookDamageClip, Camera.main.transform.position, playerTookDamageVol);
+        PlayAudioClip(playerTookDamageClip, playerTookDamageVol);
+    }
+
+    private void PlayAudioClip(AudioClip clip, float vol)
+    {
+        if (clip != null)
+        {
+            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, vol);
         }
     }
 }
