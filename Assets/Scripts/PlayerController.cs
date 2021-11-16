@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // Movement
     [SerializeField] float moveSpeed = 5f;
-    [Header("Boundary Padding")]
+
+    [Header("Movement Boundary Padding")]
     [SerializeField] float topPadding = 0.5f;
     [SerializeField] float bottomPadding = 0.5f;
     [SerializeField] float leftPadding = 0.5f;
@@ -15,11 +17,15 @@ public class PlayerController : MonoBehaviour
     private Vector2 minBound;
     private Vector2 maxBound;
 
-    private Vector2 _rawInput = new Vector2();
+    private Vector2 _rawMovementInput = new Vector2();
+
+    // Shooting
+    private Shooter _playerShooter;
 
     private void Awake() 
     {
-        InitBounds();    
+        InitBounds();
+        _playerShooter = GetComponent<Shooter>(); 
     }
     // Start is called before the first frame update
     void Start()
@@ -42,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMovement()
     {
-        Vector3 moveDelta = _rawInput * moveSpeed * Time.deltaTime;
+        Vector3 moveDelta = _rawMovementInput * moveSpeed * Time.deltaTime;
         Vector2 targetPos = transform.position + moveDelta;
         targetPos.x = Mathf.Clamp(targetPos.x, minBound.x + leftPadding, maxBound.x - rightPadding);
         targetPos.y = Mathf.Clamp(targetPos.y, minBound.y + bottomPadding, maxBound.y - topPadding);
@@ -51,6 +57,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnMove(InputValue playerInput)
     {
-        _rawInput = playerInput.Get<Vector2>();
+        _rawMovementInput = playerInput.Get<Vector2>();
+    }
+
+    private void OnFire(InputValue playerInput)
+    {
+        if (_playerShooter != null)
+        {
+            _playerShooter.isFiring = playerInput.isPressed;
+        }
     }
 }

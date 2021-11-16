@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: -3943721206860087115}
   - component: {fileID: 7759622843839892828}
   - component: {fileID: -3023027852613522003}
-  m_Layer: 0
+  - component: {fileID: 2534995080703610623}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 520770831
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1dcecca3a2318dc439c083682a12a6dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -173,7 +174,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.56
+  m_Radius: 0.4
 --- !u!114 &7759622843839892828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +201,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageOnContact: 100
+--- !u!114 &2534995080703610623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068883386310432966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156e31193aa57324bb1567bf4fc02e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileToShoot: {fileID: 2040902527324884400, guid: df17f7bbf12afe24c8c1da19c634c94e, type: 3}
+  timeBetweenShots: 0.2
