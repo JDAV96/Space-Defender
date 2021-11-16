@@ -13,6 +13,7 @@ public class VFXManager : MonoBehaviour
             if (_VFXInstance == null)
             {
                 _VFXInstance = Instantiate(Resources.Load<VFXManager>("VFXManager"));
+                DontDestroyOnLoad(_VFXInstance.gameObject);
             }
 
             return _VFXInstance;

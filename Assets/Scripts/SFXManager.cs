@@ -13,6 +13,7 @@ public class SFXManager : MonoBehaviour
             if (_SFXInstace == null)
             {
                 _SFXInstace = Instantiate(Resources.Load<SFXManager>("SFXManager"));
+                DontDestroyOnLoad(_SFXInstace.gameObject);
             }
 
             return _SFXInstace;

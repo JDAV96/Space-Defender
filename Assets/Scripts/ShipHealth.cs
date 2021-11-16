@@ -41,8 +41,9 @@ public class ShipHealth : MonoBehaviour
             else
             {
                 SFXManager.SFXInstance.PlayEnemyExplosionClip();
+                ScoreKeeper.ScoreKeeperInstance.PlayerDestroyedEnemy();
             }
-            
+
             VFXManager.VFXInstance.PlayShipExplosion(transform.position);
             Destroy(gameObject);
         }
