@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class ShipHealth : MonoBehaviour
 {
-    [SerializeField] int health = 1;
+    [SerializeField] protected int health = 1;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {

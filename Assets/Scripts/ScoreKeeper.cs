@@ -30,5 +30,6 @@ public class ScoreKeeper : MonoBehaviour
     {
         playerScore += scoreToAdd;
         playerScore = Mathf.Clamp(playerScore, 0, int.MaxValue);
+        HUD.HUDInstance.SetScoreText(playerScore);
     }
 }
