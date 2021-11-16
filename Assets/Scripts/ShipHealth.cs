@@ -26,6 +26,7 @@ public class ShipHealth : MonoBehaviour
     { 
         if (Health <= 0)
         {
+            VFXManager.Manager.PlayShipExplosion(transform.position);
             Destroy(gameObject);
         }
     }
