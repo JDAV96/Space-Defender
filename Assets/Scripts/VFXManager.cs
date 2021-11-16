@@ -40,7 +40,7 @@ public class VFXManager : MonoBehaviour
         if (_explosionEffect != null)
         {
             ParticleSystem instance = Instantiate(_explosionEffect, locationToPlay, Quaternion.identity);
-            Destroy(instance, instance.main.duration + instance.main.startLifetime.constantMax);
+            Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }
 }
