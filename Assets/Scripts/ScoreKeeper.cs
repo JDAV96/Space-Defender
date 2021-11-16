@@ -21,11 +21,9 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    [SerializeField] private int pointPerEnemyKilled;
-
-    public void PlayerDestroyedEnemy()
+    public void PlayerDestroyedEnemy(int enemyScoreValue)
     {
-        UpdateScore(pointPerEnemyKilled);
+        UpdateScore(enemyScoreValue);
     }
 
     private void UpdateScore(int scoreToAdd)

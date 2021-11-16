@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipHealth : MonoBehaviour
+public abstract class ShipHealth : MonoBehaviour
 {
     [SerializeField] int health = 1;
-
-    [Header("Options")]
-    [SerializeField] private bool isPlayerShip = false;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -20,32 +17,22 @@ public class ShipHealth : MonoBehaviour
         CheckForDeath();
     }
 
-    private void TakeDamage(int damageToTake)
+    protected virtual void TakeDamage(int damageToTake)
     {
         health -= damageToTake;
-        if (isPlayerShip)
-        {
-            SFXManager.SFXInstance.PlayplayerTookDamageClip();
-            VFXManager.VFXInstance.PlayCameraShake();
-        }
     }
 
     private void CheckForDeath()
     { 
         if (health <= 0)
         {
-            if(isPlayerShip)
-            {
-                SFXManager.SFXInstance.PlayPlayerExplosionClip();
-            }
-            else
-            {
-                SFXManager.SFXInstance.PlayEnemyExplosionClip();
-                ScoreKeeper.ScoreKeeperInstance.PlayerDestroyedEnemy();
-            }
-
-            VFXManager.VFXInstance.PlayShipExplosion(transform.position);
+            OnDead();
             Destroy(gameObject);
         }
+    }
+
+    protected virtual void OnDead()
+    {
+        VFXManager.VFXInstance.PlayShipExplosion(transform.position);
     }
 }

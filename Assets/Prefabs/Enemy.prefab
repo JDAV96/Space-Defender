@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6437703620483230118}
   - component: {fileID: 5902213326175043059}
   - component: {fileID: 671401432501649162}
-  - component: {fileID: -7578788293446206788}
   - component: {fileID: -9149769581652231686}
+  - component: {fileID: 166570185463972300}
   - component: {fileID: 8629782043254183649}
   m_Layer: 6
   m_Name: Enemy
@@ -139,20 +139,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!114 &-7578788293446206788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3789145696977987161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dca8955f9b7e9e043a2f40d7addccf03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  shakeCameraOnHit: 0
 --- !u!114 &-9149769581652231686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageOnContact: 25
+--- !u!114 &166570185463972300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789145696977987161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3c02906200a114dbe82ac2b1465356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  scoreValue: 10
 --- !u!114 &8629782043254183649
 MonoBehaviour:
   m_ObjectHideFlags: 0
