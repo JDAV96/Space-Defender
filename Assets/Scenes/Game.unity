@@ -344,7 +344,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavesInLevel:
   - {fileID: 11400000, guid: 3d9e7b6d273bd6e4a9d2f29f3e38aa1a, type: 2}
-  - {fileID: 11400000, guid: ef732d068456a5c49a00bd86ae18e87c, type: 2}
+  - {fileID: 11400000, guid: 645ee2789554c45428d23b686971dc64, type: 2}
+  - {fileID: 11400000, guid: ecb549a3c95c17044be0e448f6cbacd0, type: 2}
+  - {fileID: 11400000, guid: 87761d9b19b64334eb6851f69a44f841, type: 2}
+  - {fileID: 11400000, guid: 6eae56879d9b73b4bbdc3c1c8cceb13d, type: 2}
+  - {fileID: 11400000, guid: 946464e937d70a949a29b85b070e7763, type: 2}
+  - {fileID: 11400000, guid: 28c5b483d427b08489f84ac26c41ad88, type: 2}
+  - {fileID: 11400000, guid: 3320e341dd33ed84d80822cb63f2a336, type: 2}
   timeBetweenWaves: 1
 --- !u!1 &2120494315
 GameObject:
@@ -442,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482545693499761426, guid: cf034fd1ed17e4849b854296e0087525, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf034fd1ed17e4849b854296e0087525, type: 3}

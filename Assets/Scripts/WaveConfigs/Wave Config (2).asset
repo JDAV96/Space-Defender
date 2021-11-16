@@ -22,4 +22,4 @@ MonoBehaviour:
   timeBetweenSpawns: 0.5
   spawnTimeVariance: 0
   minTimeBetweenSpawns: 0.2
-  pathPrefab: {fileID: 2327667325747899073, guid: 3fe86e3ea7f838c4d91ab76bb3729ccc, type: 3}
+  pathPrefab: {fileID: 2509382581940332403, guid: 81de30b843e04834fa0b656e57f61b4f, type: 3}

@@ -14,10 +14,13 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnWavesInLevel()
     {
-        foreach(WaveConfigSO wave in wavesInLevel)
+        while (true)
         {
-            yield return StartCoroutine(SpawnEnemies(wave));
-            yield return new WaitForSeconds(timeBetweenWaves);
+            foreach(WaveConfigSO wave in wavesInLevel)
+            {
+                yield return StartCoroutine(SpawnEnemies(wave));
+                yield return new WaitForSeconds(timeBetweenWaves);
+            }
         }
     }
 
