@@ -26,6 +26,16 @@ public class ScoreKeeper : MonoBehaviour
         UpdateScore(enemyScoreValue);
     }
 
+    public void ResetScore()
+    {
+        playerScore = 0;
+    }
+
+    public int GetScore()
+    {
+        return playerScore;
+    }
+
     private void UpdateScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;

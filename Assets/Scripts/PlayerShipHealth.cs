@@ -24,5 +24,6 @@ public class PlayerShipHealth : ShipHealth
     {
         base.OnDead();
         SFXManager.SFXInstance.PlayPlayerExplosionClip();
+        GameManager.Instance.LoadEndMenu();
     }
 }

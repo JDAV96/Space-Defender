@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833980852ba5f404c8c2c11b418f32d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuMusic: {fileID: 8300000, guid: d1790e0bacbc87f4e9d5d2a83ccf6197, type: 3}
+  gameMusic: {fileID: 8300000, guid: 4b64b48dabba5bc47b16b4c742ad6d9c, type: 3}
+  endMenuMusic: {fileID: 8300000, guid: cf3dac56741f4354c8864b554870d12a, type: 3}
   basicLaserShotClip: {fileID: 8300000, guid: 617be06ee6b1543468f9bd7905ad609d, type: 3}
   basicLaserShotClipVol: 0.05
   enemyExplosion: {fileID: 8300000, guid: e3a7a0e154e2fca44a3b3293ceec8fcc, type: 3}
@@ -65,7 +68,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4b64b48dabba5bc47b16b4c742ad6d9c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

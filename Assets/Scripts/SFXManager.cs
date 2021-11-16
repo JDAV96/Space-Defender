@@ -20,6 +20,13 @@ public class SFXManager : MonoBehaviour
         }
     }
 
+    private AudioSource musicSource;
+
+    [Header("Music Files")]
+    [SerializeField] private AudioClip mainMenuMusic;
+    [SerializeField] private AudioClip gameMusic;
+    [SerializeField] private AudioClip endMenuMusic;
+
     [Header("Shooting")]
     [SerializeField] private AudioClip basicLaserShotClip;
     [SerializeField] [Range(0f, 1f)] float basicLaserShotClipVol;
@@ -31,6 +38,32 @@ public class SFXManager : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] float playerExplosionVol;
     [SerializeField] private AudioClip playerTookDamageClip;
     [SerializeField] [Range(0f, 1f)] float playerTookDamageVol;
+
+    private void Awake() 
+    {
+        musicSource = GetComponent<AudioSource>();    
+    }
+
+    public void PlayMainMenuMusic()
+    {
+        ChangeMusic(mainMenuMusic);
+    }
+
+    public void PlayGameMusic()
+    {
+        ChangeMusic(gameMusic);
+    }
+
+    public void PlayEndMenuMusic()
+    {
+        ChangeMusic(endMenuMusic);
+    }
+
+    private void ChangeMusic(AudioClip newMusic)
+    {
+        musicSource.clip = newMusic;
+        musicSource.Play();
+    }
 
     public void PlayBasicLaserShotClip()
     {
