@@ -51,6 +51,7 @@ public class Shooter : MonoBehaviour
         while (true)
         {
             Instantiate(projectileToShoot, gameObject.transform.position, Quaternion.identity);
+            SFXManager.SFXInstance.PlayBasicLaserShotClip();
             
             if (useAI)
             {

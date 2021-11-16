@@ -7,7 +7,7 @@ public class ShipHealth : MonoBehaviour
     [SerializeField] int health = 1;
 
     [Header("Options")]
-    [SerializeField] private bool shakeCameraOnHit = false;
+    [SerializeField] private bool isPlayerShip = false;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -23,9 +23,10 @@ public class ShipHealth : MonoBehaviour
     private void TakeDamage(int damageToTake)
     {
         health -= damageToTake;
-        if (shakeCameraOnHit)
+        if (isPlayerShip)
         {
-            VFXManager.Manager.PlayCameraShake();
+            SFXManager.SFXInstance.PlayplayerTookDamageClip();
+            VFXManager.VFXInstance.PlayCameraShake();
         }
     }
 
@@ -33,7 +34,16 @@ public class ShipHealth : MonoBehaviour
     { 
         if (health <= 0)
         {
-            VFXManager.Manager.PlayShipExplosion(transform.position);
+            if(isPlayerShip)
+            {
+                SFXManager.SFXInstance.PlayPlayerExplosionClip();
+            }
+            else
+            {
+                SFXManager.SFXInstance.PlayEnemyExplosionClip();
+            }
+            
+            VFXManager.VFXInstance.PlayShipExplosion(transform.position);
             Destroy(gameObject);
         }
     }

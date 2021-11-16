@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3238041689400310726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3238041689400310728}
+  - component: {fileID: 3238041689400310727}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3238041689400310728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238041689400310726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0563395, y: -0.7203755, z: 0.06748013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3238041689400310727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238041689400310726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833980852ba5f404c8c2c11b418f32d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicLaserShotClip: {fileID: 8300000, guid: 617be06ee6b1543468f9bd7905ad609d, type: 3}
+  basicLaserShotClipVol: 0.05
+  enemyExplosion: {fileID: 8300000, guid: e3a7a0e154e2fca44a3b3293ceec8fcc, type: 3}
+  enemyExplosionpVol: 0.5
+  playerExplosion: {fileID: 8300000, guid: edb0432f3dfbdeb46bcc407cffb70c4e, type: 3}
+  playerExplosionpVol: 0.7
+  playerTookDamageClip: {fileID: 8300000, guid: 722429ff1e18dab468f4e80ea1136dbc, type: 3}
+  playerTookDamageVol: 0.7

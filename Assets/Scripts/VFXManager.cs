@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class VFXManager : MonoBehaviour
 {
-    private static VFXManager _manager;
+    private static VFXManager _VFXInstance;
 
-    public static VFXManager Manager
+    public static VFXManager VFXInstance
     {
         get 
         {
-            if (_manager == null)
+            if (_VFXInstance == null)
             {
-                _manager = Instantiate(Resources.Load<VFXManager>("VFXManager"));
+                _VFXInstance = Instantiate(Resources.Load<VFXManager>("VFXManager"));
             }
 
-            return _manager;
+            return _VFXInstance;
         }
     }
 
