@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ShipHealth : MonoBehaviour
 {
-    [SerializeField] int Health = 1;
+    [SerializeField] int health = 1;
+
+    [Header("Options")]
+    [SerializeField] private bool shakeCameraOnHit = false;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -19,12 +22,16 @@ public class ShipHealth : MonoBehaviour
 
     private void TakeDamage(int damageToTake)
     {
-        Health -= damageToTake;
+        health -= damageToTake;
+        if (shakeCameraOnHit)
+        {
+            VFXManager.Manager.PlayCameraShake();
+        }
     }
 
     private void CheckForDeath()
     { 
-        if (Health <= 0)
+        if (health <= 0)
         {
             VFXManager.Manager.PlayShipExplosion(transform.position);
             Destroy(gameObject);

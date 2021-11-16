@@ -187,7 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca8955f9b7e9e043a2f40d7addccf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  health: 100
+  shakeCameraOnHit: 1
 --- !u!114 &-3023027852613522003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileToShoot: {fileID: 2040902527324884400, guid: df17f7bbf12afe24c8c1da19c634c94e, type: 3}
   timeBetweenShots: 0.2
+  useAI: 0
+  shotVariance: 0.5
+  minTimeBetweenShots: 0.1

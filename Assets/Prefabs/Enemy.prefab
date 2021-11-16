@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca8955f9b7e9e043a2f40d7addccf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  health: 10
+  shakeCameraOnHit: 0
 --- !u!114 &-9149769581652231686
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,6 +20,20 @@ public class VFXManager : MonoBehaviour
     }
 
     [SerializeField] private ParticleSystem _explosionEffect;
+    private CameraShake _cameraShake;
+
+    private void Awake() 
+    {
+        _cameraShake = Camera.main.GetComponent<CameraShake>();
+    }
+
+    public void PlayCameraShake()
+    {
+        if (_cameraShake != null)
+        {
+            _cameraShake.Play();
+        }
+    }
 
     public void PlayShipExplosion(Vector3 locationToPlay)
     {
